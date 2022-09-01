@@ -23,7 +23,6 @@ function introJuego () {
         . # . # .
         `)
     basic.clearScreen()
-    basic.showString("Go!")
     music.playSoundEffect(music.builtinSoundEffect(soundExpression.spring), SoundExpressionPlayMode.UntilDone)
 }
 input.onButtonPressed(Button.A, function () {
@@ -39,6 +38,7 @@ led.setBrightness(150)
 jugador = game.createSprite(2, 4)
 game.setLife(2)
 game.setScore(0)
+jugador.set(LedSpriteProperty.Brightness, 200)
 basic.forever(function () {
     basic.pause(randint(1000, 1500))
     objeto = game.createSprite(randint(0, 4), 0)
