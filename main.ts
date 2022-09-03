@@ -23,7 +23,6 @@ function introJuego () {
         . # . # .
         `)
     basic.clearScreen()
-    music.playSoundEffect(music.builtinSoundEffect(soundExpression.spring), SoundExpressionPlayMode.UntilDone)
 }
 input.onButtonPressed(Button.A, function () {
     jugador.change(LedSpriteProperty.X, -1)
@@ -40,10 +39,10 @@ game.setLife(2)
 game.setScore(0)
 jugador.set(LedSpriteProperty.Brightness, 200)
 basic.forever(function () {
-    basic.pause(randint(1000, 1500))
+    basic.pause(randint(500, 1000))
     objeto = game.createSprite(randint(0, 4), 0)
     for (let index = 0; index < 4; index++) {
-        basic.pause(200)
+        basic.pause(100)
         objeto.change(LedSpriteProperty.Y, 1)
     }
     if (objeto.isTouching(jugador)) {
